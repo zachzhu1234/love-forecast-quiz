@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测测你的脱单指数</title>
+    <style>
+        /* Basic styling for a clean, attractive Chinese interface */
+        body { 
+            font-family: "Microsoft YaHei", "SimHei", Arial, sans-serif; 
+            text-align: center; 
+            padding: 20px; 
+            background-color: #f8f8ff; /* Light lavender background */
+        }
+        .container { 
+            max-width: 450px; 
+            margin: 30px auto; 
+            padding: 40px; 
+            background-color: #fff; 
+            border-radius: 15px; 
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+        }
+        input, select, button { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            box-sizing: border-box; 
+            border-radius: 8px; 
+            border: 1px solid #ccc; 
+            font-size: 16px; 
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+        button#start-button { 
+            background-color: #ff69b4; /* Pink */
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 18px;
+            padding: 15px;
+            margin-top: 25px;
+            transition: background-color 0.3s; 
+        }
+        button#start-button:hover { 
+            background-color: #ff1493; 
+        }
+        button#return-button { 
+            background-color: #6a5acd; /* Blue-purple */
+            color: white; 
+            border: none; 
+            cursor: pointer;
+            padding: 12px;
+            margin-top: 20px;
+        }
+        h1 { 
+            color: #ff69b4; 
+            margin-bottom: 30px; 
+            font-size: 28px;
+        } 
+        h2, h3 { 
+            color: #8a2be2; /* Blue-violet */
+            margin-top: 20px; 
+        }
+        p { 
+            line-height: 1.8; 
+            font-size: 1.1em; 
+            text-align: left;
+            margin-left: 10%;
+        }
+        p span {
+            font-weight: bold;
+            color: #d81b60; /* Darker pink for emphasis */
+        }
+        hr { 
+            border: 0; 
+            border-top: 1px dashed #e0e0e0; 
+            margin: 25px 0; 
+        }
+        .hidden { 
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="input-screen">
+            <h1>🌸 测测你什么时候脱单 🌸</h1>
+            
+            <label for="dob">请输入出生年月日:</label>
+            <input type="date" id="dob" required>
+
+            <label for="gender">性别:</label>
+            <select id="gender">
+                <option value="male">男</option>
+                <option value="female">女</option>
+                <option value="other">其他</option>
+            </select>
+
+            <label for="blood-type">血型:</label>
+            <select id="blood-type">
+                <option value="A">A型</option>
+                <option value="B">B型</option>
+                <option value="AB">AB型</option>
+                <option value="O">O型</option>
+                <option value="unknown">不确定/保密</option>
+            </select>
+
+            <label for="location">目前所在地:</label>
+            <select id="location">
+                <option value="China">中国</option>
+                <option value="USA">美国</option>
+                <option value="Canada">加拿大</option>
+                <option value="UK">英国</option>
+                <option value="Japan">日本</option>
+                <option value="Other">其他国家</option>
+            </select>
+
+            <button id="start-button">✨ 开始测试 ✨</button>
+        </div>
+
+
+        <div id="results-screen" class="hidden">
+            <h2>🎉 你的专属脱单预测 🎉</h2>
+            
+            <p>你的幸运数字是：<span id="lucky-number"></span></p>
+            <p>你的幸运星是：<span id="lucky-planet"></span></p>
+            <p>你的幸运宝石是：<span id="lucky-gem"></span></p>
+            
+            <hr>
+            
+            <h3 style="text-align: center;">💖 甜蜜预言 💖</h3>
+            <p class="forecast-message" style="text-align: center;">根据宇宙星相显示，你预计将在 <span id="date-forecast"></span> 遇到你的命中注定哦！</p>
+            <p style="text-align: center; font-size: 0.9em; color: #777;">（请保持乐观，缘分很快就会降临！）</p>
+            
+            <hr>
+
+            <button id="return-button">返回主页</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
